@@ -1,0 +1,33 @@
+body {
+  color: gray;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#navbar {
+  border: 1px solid red;
+  height:;
+  width: 50%;
+  margin-left: 200px;
+  margin-right: 200px;
+  padding: 0;
+}
+
+#content_div {
+  border: 1px solid blue;
+  position: absolute;
+  top:10%;
+  width : 66%;
+  right: 0;
+}
+
+#map_div {
+  border: 1px solid green;
+  z-index: 200;
+  position: fixed;
+  top: 10%;
+  left: 0;
+  width: 33%;
+  height: 33%;
+}
