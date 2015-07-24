@@ -25,7 +25,7 @@ body {
 #map_div {
   border: 1px solid green;
   z-index: 200;
-  position: fixed;
+  position: absolute;
   top: 10%;
   left: 0;
   width: 33%;
