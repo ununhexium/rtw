@@ -1,9 +1,12 @@
 var g = {};
 
-$(document).ready(function() {
-  loadRecursive($(this));
+function afterLoading() {
   initTabs();
   addGoogleMapListeners();
+};
+
+$(document).ready(function() {
+  loadRecursiveMain($(this), afterLoading());
 });
 
 function initTabs() {
@@ -15,6 +18,10 @@ function initTabs() {
 }
 
 // stackoverflow.com/questions/17908296/jquery-recursive-loading-nested-html
+function loadRecursiveMain(context, callback) {
+  loadRecursive(context);
+  callback();
+}
 function loadRecursive(context) {
   // search matching elements that have 'place-holder' class
   $('.place-holder', context).each(function() {
@@ -39,8 +46,6 @@ function addGoogleMapListeners() {
       var clicked = $(this);
       geocoder = new google.maps.Geocoder();
       var address = clicked.attr('address');
-      // input box value
-      alert(address);
       geocoder.geocode({
         'address' : address
       }, function(results, status) {

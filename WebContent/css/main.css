@@ -40,3 +40,12 @@ body {
   color: #aaa;
   font-weight: bold;
 }
+
+h4>span {
+  margin-right: 0.5em;
+}
+
+i {
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
