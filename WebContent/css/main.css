@@ -5,13 +5,6 @@ body {
   padding: 0;
 }
 
-#page {
-  max-width: 800px;
-  margin: 0 auto;
-  position: relative;
-  heigth: 100%;
-}
-
 #navbar {
   border: 1px solid red;
   height:;
@@ -48,12 +41,10 @@ body {
 
 #map_div {
   border: 1px solid green;
-  z-index: 200;
-  position: absolute;
   top: 0;
   left: 0;
-  width: 33%;
   height: 300px;
+  width:100%;
 }
 
 .tabs {
