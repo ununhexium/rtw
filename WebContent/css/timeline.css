@@ -134,7 +134,7 @@
   background-color: #B8005C !important;
 }
 
-.article-title {
+.timeline .article-title {
   margin-top: 0;
   color: inherit;
 }
@@ -145,6 +145,10 @@
 
 .timeline .article-body {
   display: none;
+}
+
+.timeline .article-more:after {
+  
 }
 
 .article-body>p+p {

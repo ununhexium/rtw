@@ -15,18 +15,18 @@ body {
 }
 
 #timeline_div {
+  
 }
 
-#roadmap_panel_div {
-  border: 1px solid purple;
+#roadmap_div {
+  height: 300px;
+  width: 100%;
 }
 
 #map_div {
   border: 1px solid green;
-  top: 0;
-  left: 0;
   height: 300px;
-  width:100%;
+  width: 100%;
 }
 
 .tabs {
