@@ -35,58 +35,7 @@
   
 </script>
 
-<script type="text/javascript">
-<!-- placeholder recursive includes from http://stackoverflow.com/questions/17908296/jquery-recursive-loading-nested-html -->
-  $(function() {
-    loadRecursive($(this));
-  });
-  function loadRecursive(context) {
-    //search matching elements that have 'place-holder' class
-    $('.place-holder', context).each(function() {
-      var that = $(this);
-      $.get(that.attr('include-file'), function(data, textStatus) {
-        repl = $(data);
-        that.replaceWith(repl);
-        loadRecursive(repl);
-      }, 'html');
-    });
-  }
-
-  function initialize() {
-    var mapOptions = {
-      center : {
-        lat : 0,
-        lng : 0
-      },
-      zoom : 11,
-      mapTypeId : google.maps.MapTypeId.ROADMAP
-    };
-    var googleMap = new google.maps.Map(document.getElementById('map_div'), mapOptions);
-    window.googleMap = googleMap;
-    
-    mapOptions.zoom = 1;
-    var roadmap = new google.maps.Map(document.getElementById('roadmap_div'), mapOptions);
-    window.roadmap = roadmap;
-    
-    setTimeout(function() {
-      google.maps.event.trigger(window.roadmap, "resize");
-    }, 500);
-  }
-  google.maps.event.addDomListener(window, 'load', initialize);
-
-
-  $(document).ready(function() {
-    $('[data-toggle="tooltip"]').tooltip();
-  });
-  
-  $(function() {
-    $("a.tabs").click(function(e) {
-      var target = $(this).data("target");
-      var isTargetExpanded = $(target).hasClass('in');
-      $(target).removeClass('collapse').addClass("in"); // expand clicked target
-    });
-  });
-</script>
+<script type="text/javascript" src="./js/main.js"></script>
 
 </head>
 
@@ -97,7 +46,7 @@
     id="page">
 
     <!--  tabs  -->
-    <div>
+    <div id="tabs_div">
       <ul class="nav nav-pills">
         <li class="active"><a
           data-toggle="pill"
