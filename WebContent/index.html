@@ -55,6 +55,10 @@
 			$(target).removeClass('collapse').addClass("in"); // expand clicked target
 		});
 	});
+
+	$(function() {
+		$("#roadmap_div").load("./ui/accordion.html");
+	});
 </script>
 
 </head>
@@ -73,7 +77,7 @@
           style="width: 30%"
           data-toggle="tooltip"
           title="Preparation">
-          <span class="sr-only">35% Complete (success)</span>
+          <span class="sr-only">Preparation</span>
         </div>
       </div>
       <div class="progress">
@@ -82,7 +86,7 @@
           style="width: 1%"
           data-toggle="tooltip"
           title="Travelling">
-          <span class="sr-only">20% Complete (warning)</span>
+          <span class="sr-only">Travellig</span>
         </div>
       </div>
       <div class="progress">
@@ -91,10 +95,11 @@
           style="width: 1%"
           data-toggle="tooltip"
           title="Next job">
-          <span class="sr-only">10% Complete (danger)</span>
+          <span class="sr-only">Next Job</span>
         </div>
       </div>
     </div>
+    <div id="roadmap_div"></div>
   </div>
 </body>
 </html>
