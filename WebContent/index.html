@@ -50,31 +50,6 @@
         loadRecursive(repl);
       }, 'html');
     });
-    
-    $('.article-map').on("click", "button", function() {
-      setTimeout(function() {
-        google.maps.event.trigger(window.googleMap, "resize");
-      }, 500);
-      
-      var clicked = $(this);
-      
-      geocoder = new google.maps.Geocoder();
-      var address = clicked.attr('address'); //input box value
-      geocoder.geocode({
-        'address' : address
-      }, function(results, status) {
-        if (status == google.maps.GeocoderStatus.OK) {
-          window.googleMap.setCenter(results[0].geometry.location);
-          var marker = new google.maps.Marker({
-            map : window.googleMap,
-            position : results[0].geometry.location
-          });
-        } else {
-          alert("Geocode was not successful for the following reason: " + status);
-        }
-      });
-      
-    })
   }
 
   function initialize() {
@@ -160,7 +135,7 @@
       </div>
       <div
         id="timeline"
-        class="tab-pane fade">
+        class="tab-pane fade in active">
 
         <div id="timeline_div">
           <div
@@ -170,7 +145,7 @@
       </div>
       <div
         id="roadmap"
-        class="tab-pane fade in active">
+        class="tab-pane fade">
         <div id="roadmap_div"></div>
       </div>
       <div
