@@ -130,6 +130,10 @@
   background-color: #5bc0de !important;
 }
 
+.badge.party {
+  background-color: #B8005C !important;
+}
+
 .article-title {
   margin-top: 0;
   color: inherit;
