@@ -57,7 +57,7 @@
 			}, 1000);
 		})
 	}
-	
+
 	function initialize() {
 		var mapOptions = {
 			center : {
@@ -98,6 +98,8 @@
   <div
     class="container"
     id="page">
+
+    <!--  map modal -->
     <div
       id="map_modal"
       class="modal fade"
@@ -126,38 +128,14 @@
 
       </div>
     </div>
-    <div id="content_div"></div>
-    <div id="timeline_div"></div>
+    <!--  end of map modal -->
+
+    <div id="timeline_div">
+      <div
+        class="place-holder"
+        include-file="./ui/timeline.html"></div>
+    </div>
     <div id="roadmap_panel_div">
-      <div id="progress_group_div">
-        <div class="progress">
-          <div
-            class="progress-bar progress-bar-success"
-            style="width: 30%"
-            data-toggle="tooltip"
-            title="Preparation">
-            <span class="sr-only">Preparation</span>
-          </div>
-        </div>
-        <div class="progress">
-          <div
-            class="progress-bar progress-bar-warning progress-bar-striped"
-            style="width: 1%"
-            data-toggle="tooltip"
-            title="Traveling">
-            <span class="sr-only">Traveling</span>
-          </div>
-        </div>
-        <div class="progress">
-          <div
-            class="progress-bar progress-bar-danger"
-            style="width: 1%"
-            data-toggle="tooltip"
-            title="Next job">
-            <span class="sr-only">Next Job</span>
-          </div>
-        </div>
-      </div>
       <div
         class="place-holder"
         include-file="./ui/accordion.html"></div>

@@ -5,15 +5,6 @@ body {
   padding: 0;
 }
 
-#navbar {
-  border: 1px solid red;
-  height:;
-  width: 50%;
-  margin-left: 200px;
-  margin-right: 200px;
-  padding: 0;
-}
-
 #content_div {
   border: 1px solid blue;
   position: absolute;
@@ -24,19 +15,10 @@ body {
 }
 
 #timeline_div {
-  border: 1px solid purple;
-  position: absolute;
-  top: 43%;
-  width: 33%;
-  left: 0;
 }
 
 #roadmap_panel_div {
   border: 1px solid purple;
-  position: absolute;
-  top: 300px;
-  width: 33%;
-  left: 0;
 }
 
 #map_div {
