@@ -5,6 +5,13 @@ body {
   padding: 0;
 }
 
+#page {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  heigth: 100%;
+}
+
 #navbar {
   border: 1px solid red;
   height:;
@@ -34,7 +41,7 @@ body {
 #roadmap_panel_div {
   border: 1px solid purple;
   position: absolute;
-  top: 43%;
+  top: 300px;
   width: 33%;
   left: 0;
 }
@@ -43,10 +50,10 @@ body {
   border: 1px solid green;
   z-index: 200;
   position: absolute;
-  top: 10%;
+  top: 0;
   left: 0;
   width: 33%;
-  height: 33%;
+  height: 300px;
 }
 
 .tabs {

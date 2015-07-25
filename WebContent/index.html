@@ -56,50 +56,66 @@
 		});
 	});
 
-	$(function() {
-		$("#roadmap_div").load("./ui/accordion.html");
+	<!-- placeholder recursive includes from http://stackoverflow.com/questions/17908296/jquery-recursive-loading-nested-html -->
+	$(function () {
+	    loadRecursive($(this));
 	});
+	function loadRecursive(context) {
+	    //search matching elements that have 'place-holder' class
+	    $('.place-holder', context).each(function() {
+	        var that = $(this);
+	        $.get(that.attr('include-file'), function(data, textStatus) {
+	            repl = $(data);
+	            that.replaceWith(repl);
+	            loadRecursive(repl);
+	        }, 'html');
+	    });
+	}
 </script>
 
 </head>
 
 
 <body>
-  <div id="navbar_div"></div>
-  <div id="map_div"></div>
-  <div id="content_div"></div>
-  <div id="timeline_div"></div>
-  <div id="roadmap_panel_div">
-    <div id="progress_group_div">
-      <div class="progress">
-        <div
-          class="progress-bar progress-bar-success"
-          style="width: 30%"
-          data-toggle="tooltip"
-          title="Preparation">
-          <span class="sr-only">Preparation</span>
+  <div id="page">
+    <div id="navbar_div"></div>
+    <div id="map_div"></div>
+    <div id="content_div"></div>
+    <div id="timeline_div"></div>
+    <div id="roadmap_panel_div">
+      <div id="progress_group_div">
+        <div class="progress">
+          <div
+            class="progress-bar progress-bar-success"
+            style="width: 30%"
+            data-toggle="tooltip"
+            title="Preparation">
+            <span class="sr-only">Preparation</span>
+          </div>
+        </div>
+        <div class="progress">
+          <div
+            class="progress-bar progress-bar-warning progress-bar-striped"
+            style="width: 1%"
+            data-toggle="tooltip"
+            title="Travelling">
+            <span class="sr-only">Travellig</span>
+          </div>
+        </div>
+        <div class="progress">
+          <div
+            class="progress-bar progress-bar-danger"
+            style="width: 1%"
+            data-toggle="tooltip"
+            title="Next job">
+            <span class="sr-only">Next Job</span>
+          </div>
         </div>
       </div>
-      <div class="progress">
-        <div
-          class="progress-bar progress-bar-warning progress-bar-striped"
-          style="width: 1%"
-          data-toggle="tooltip"
-          title="Travelling">
-          <span class="sr-only">Travellig</span>
-        </div>
-      </div>
-      <div class="progress">
-        <div
-          class="progress-bar progress-bar-danger"
-          style="width: 1%"
-          data-toggle="tooltip"
-          title="Next job">
-          <span class="sr-only">Next Job</span>
-        </div>
-      </div>
+      <div
+        class="place-holder"
+        include-file="./ui/accordion.html"></div>
     </div>
-    <div id="roadmap_div"></div>
   </div>
 </body>
 </html>
