@@ -17,9 +17,26 @@ body {
 #content_div {
   border: 1px solid blue;
   position: absolute;
-  top:10%;
-  width : 66%;
+  top: 10%;
+  width: 66%;
   right: 0;
+  width: 66%
+}
+
+#timeline_div {
+  border: 1px solid purple;
+  position: absolute;
+  top: 43%;
+  width: 33%;
+  left: 0;
+}
+
+#roadmap_panel_div {
+  border: 1px solid purple;
+  position: absolute;
+  top: 43%;
+  width: 33%;
+  left: 0;
 }
 
 #map_div {
@@ -30,4 +47,17 @@ body {
   left: 0;
   width: 33%;
   height: 33%;
+}
+
+.tabs {
+  display: block;
+  padding: 10px;
+  background: #4a4a4a;
+  margin-bottom: 2px;
+  color: #fff;
+}
+
+.tabs:hover {
+  color: #aaa;
+  font-weight: bold;
 }

@@ -7,16 +7,22 @@
 <title>RTW</title>
 
 <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link
+  rel="stylesheet"
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
-<link rel="stylesheet" href="css/main.css">
-<link rel="stylesheet" href="css/timeline.css">
+<link
+  rel="stylesheet"
+  href="css/main.css">
+<link
+  rel="stylesheet"
+  href="css/timeline.css">
 
-<!-- Latest compiled and minified JavaScript -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
-
-<script type="text/javascript"
+<script
+  type="text/javascript"
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBPEL9yc1P4Jwll1TEEtFQrqovnRg8UAj0">
 	
 </script>
@@ -37,138 +43,58 @@
 	google.maps.event.addDomListener(window, 'load', initialize);
 </script>
 
+<script>
+	$(document).ready(function() {
+		$('[data-toggle="tooltip"]').tooltip();
+	});
+
+	$(function() {
+		$("a.tabs").click(function(e) {
+			var target = $(this).data("target");
+			var isTargetExpanded = $(target).hasClass('in');
+			$(target).removeClass('collapse').addClass("in"); // expand clicked target
+		});
+	});
+</script>
+
 </head>
+
 
 <body>
   <div id="navbar_div"></div>
   <div id="map_div"></div>
-  <div id="content_div">
-    <ul class="timeline">
-      <li>
-        <div class="timeline-badge">
-          <i class="glyphicon glyphicon-check"></i>
+  <div id="content_div"></div>
+  <div id="timeline_div"></div>
+  <div id="roadmap_panel_div">
+    <div id="progress_group_div">
+      <div class="progress">
+        <div
+          class="progress-bar progress-bar-success"
+          style="width: 30%"
+          data-toggle="tooltip"
+          title="Preparation">
+          <span class="sr-only">35% Complete (success)</span>
         </div>
-        <div class="timeline-panel">
-          <div class="timeline-heading">
-            <h4 class="timeline-title">Mussum ipsum cacilds</h4>
-          </div>
-          <div class="timeline-body">
-            <p>date1</p>
-          </div>
+      </div>
+      <div class="progress">
+        <div
+          class="progress-bar progress-bar-warning progress-bar-striped"
+          style="width: 1%"
+          data-toggle="tooltip"
+          title="Travelling">
+          <span class="sr-only">20% Complete (warning)</span>
         </div>
-      </li>
-      <li class="timeline-inverted">
-        <div class="timeline-badge warning">
-          <i class="glyphicon glyphicon-credit-card"></i>
+      </div>
+      <div class="progress">
+        <div
+          class="progress-bar progress-bar-danger"
+          style="width: 1%"
+          data-toggle="tooltip"
+          title="Next job">
+          <span class="sr-only">10% Complete (danger)</span>
         </div>
-        <div class="timeline-panel">
-          <div class="timeline-heading">
-            <h4 class="timeline-title">Mussum ipsum cacilds</h4>
-          </div>
-          <div class="timeline-body">
-            <p>date2</p>
-          </div>
-        </div>
-      </li>
-      <li>
-        <div class="timeline-badge danger">
-          <i class="glyphicon glyphicon-credit-card"></i>
-        </div>
-        <div class="timeline-panel">
-          <div class="timeline-heading">
-            <h4 class="timeline-title">Mussum ipsum cacilds</h4>
-          </div>
-          <div class="timeline-body">
-            <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá ,
-              depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum
-              girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma
-              pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i
-              pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num
-              gostis.</p>
-          </div>
-        </div>
-      </li>
-      <li class="timeline-inverted">
-        <div class="timeline-panel">
-          <div class="timeline-heading">
-            <h4 class="timeline-title">Mussum ipsum cacilds</h4>
-          </div>
-          <div class="timeline-body">
-            <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá ,
-              depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum
-              girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma
-              pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i
-              pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num
-              gostis.</p>
-          </div>
-        </div>
-      </li>
-      <li>
-        <div class="timeline-badge info">
-          <i class="glyphicon glyphicon-floppy-disk"></i>
-        </div>
-        <div class="timeline-panel">
-          <div class="timeline-heading">
-            <h4 class="timeline-title">Mussum ipsum cacilds</h4>
-          </div>
-          <div class="timeline-body">
-            <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá ,
-              depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum
-              girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma
-              pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i
-              pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num
-              gostis.</p>
-            <hr>
-            <div class="btn-group">
-              <button type="button" class="btn btn-primary btn-sm dropdown-toggle"
-                data-toggle="dropdown">
-                <i class="glyphicon glyphicon-cog"></i> <span class="caret"></span>
-              </button>
-              <ul class="dropdown-menu" role="menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li class="divider"></li>
-                <li><a href="#">Separated link</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </li>
-      <li>
-        <div class="timeline-panel">
-          <div class="timeline-heading">
-            <h4 class="timeline-title">Mussum ipsum cacilds</h4>
-          </div>
-          <div class="timeline-body">
-            <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá ,
-              depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum
-              girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma
-              pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i
-              pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num
-              gostis.</p>
-          </div>
-        </div>
-      </li>
-      <li class="timeline-inverted">
-        <div class="timeline-badge success">
-          <i class="glyphicon glyphicon-thumbs-up"></i>
-        </div>
-        <div class="timeline-panel">
-          <div class="timeline-heading">
-            <h4 class="timeline-title">Mussum ipsum cacilds</h4>
-          </div>
-          <div class="timeline-body">
-            <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá ,
-              depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum
-              girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma
-              pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i
-              pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num
-              gostis.</p>
-          </div>
-        </div>
-      </li>
-    </ul>
+      </div>
+    </div>
   </div>
 </body>
 </html>
