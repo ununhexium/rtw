@@ -7,6 +7,7 @@ function afterLoading() {
 
 $(document).ready(function() {
   loadRecursiveMain($(this), afterLoading());
+  $('[data-toggle="tooltip"]').tooltip();
 });
 
 function initTabs() {
@@ -70,10 +71,11 @@ function initializeGoogleMaps() {
       lng : 0
     },
     zoom : 11,
-    mapTypeId : google.maps.MapTypeId.ROADMAP
+    mapTypeId : google.maps.MapTypeId.SATELLITE
   };
   g.modalmap = new google.maps.Map(document.getElementById('map_div'), mapOptions);
   
+  mapOptions.mapTypeId = google.maps.MapTypeId.ROADMAP
   mapOptions.zoom = 1;
   g.roadmap = new google.maps.Map(document.getElementById('roadmap_div'), mapOptions);
   

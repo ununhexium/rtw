@@ -18,7 +18,7 @@
 <link
   rel="stylesheet"
   href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-  
+
 <link
   rel="stylesheet"
   href="./lib/flag-icon-css-master/css/flag-icon.css">
@@ -26,7 +26,7 @@
 <link
   rel="stylesheet"
   href="css/main.css">
-  
+
 <link
   rel="stylesheet"
   href="css/timeline.css">
@@ -40,7 +40,9 @@
   
 </script>
 
-<script type="text/javascript" src="./js/main.js"></script>
+<script
+  type="text/javascript"
+  src="./js/main.js"></script>
 
 </head>
 
@@ -55,23 +57,23 @@
       <ul class="nav nav-pills">
         <li class="active"><a
           data-toggle="pill"
-          href="#home">Home</a></li>
-        <li><a
-          data-toggle="pill"
-          href="#timeline">Timeline</a></li>
-        <li><a
-          data-toggle="pill"
-          href="#roadmap">Roadmap</a></li>
+          href="#home"><span class="glyphicon glyphicon-home"></span></a></li>
         <li class="dropdown"><a
           class="dropdown-toggle"
           data-toggle="dropdown"
-          href="#">Articles<span class="caret"></span></a>
+          href="#"><span class="glyphicon glyphicon-list"></span><span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="#">Tech</a></li>
             <li><a href="#">Preparation</a></li>
             <li><a href="#">Travel</a></li>
           </ul></li>
-
+          
+        <li><a
+          data-toggle="pill"
+          href="#timeline">Timeline</a></li>
+        <li><a
+          data-toggle="pill"
+          href="#roadmap"><span class="glyphicon glyphicon-road"></span></a></li>
         <li><a
           data-toggle="pill"
           href="#about">About</a></li>
@@ -139,7 +141,12 @@
       </div>
     </div>
     <!--  end of map modal -->
-
+    
+    <footer class="footer">
+      <div class="container">
+        <p class="text-muted">© Christophe Loiseau, 116@lab0.net</p>
+      </div>
+    </footer>
   </div>
 </body>
 </html>

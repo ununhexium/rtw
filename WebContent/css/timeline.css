@@ -47,6 +47,7 @@
   position: relative;
   -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+  background-color: #f8f8f8;
 }
 
 .timeline>li>.article-panel:before {
@@ -67,8 +68,8 @@
   right: -14px;
   display: inline-block;
   border-top: 14px solid transparent;
-  border-left: 14px solid #fff;
-  border-right: 0 solid #fff;
+  border-left: 14px solid #f8f8f8;
+  border-right: 0 solid #f8f8f8;
   border-bottom: 14px solid transparent;
   content: " ";
 }
