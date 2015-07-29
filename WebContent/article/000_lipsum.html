@@ -1,33 +1,43 @@
-<li>
+<!-- ids are forbidden here as this content may be included at several locations on the same page -->
+<!-- this line is 1 article element and its class is used to identify it -->
+<li class="article-lipsum">
   <div class="badge danger">
     <i class="glyphicon glyphicon-check"></i>
   </div>
   <div class="article-panel">
     <div class="article-heading">
       <h4 class="article-title">
-        <span class="flag-icon flag-icon-va"></span>Some title<span class="original">Vaticano</span>
+        <span class="flag-icon flag-icon-va"></span>Lipsum City
       </h4>
+      <!-- second title, to have the original name for instance -->
+      <h4 class="article-title">Lorem Ipsum</h4>
       <p>
+        <!-- title complementary info -->
         <small class="text-muted"><i class="glyphicon glyphicon-time"></i> 11 hours ago via
           Twitter</small>
       </p>
     </div>
+    <!-- summary of the article -->
     <div class="article-abstract">
       <p>This is the part visible in the timeline</p>
     </div>
+    <!-- content of the article -->
     <div class="article-body">
-      <p>This is something longer that will be displayed if the user selects the full article</p>
+      <p>This is something longer that will be displayed if the user selects the full article.</p>
     </div>
+    <!-- to show the user where the location is -->
     <div class="article-map">
+      <!-- pay attention to use something valid for the address -->
       <button
         type="button"
         class="btn btn-info btn-xs googlemapbutton"
         data-toggle="modal"
         data-target="#map_modal"
-        address="Vatican City">
+        address="Logelheim">
         <span class="glyphicon glyphicon-map-marker"></span>
       </button>
     </div>
     <div class="article-more"></div>
-  </div>
+  </div> <!-- background image set in css/background.css -->
+  <div class="article-background"></div>
 </li>

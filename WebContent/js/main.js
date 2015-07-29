@@ -1,12 +1,9 @@
 var g = {};
 
-function afterLoading() {
+$(document).ready(function() {
+  loadRecursive($(this));
   initTabs();
   addGoogleMapListeners();
-};
-
-$(document).ready(function() {
-  loadRecursiveMain($(this), afterLoading());
   $('[data-toggle="tooltip"]').tooltip();
 });
 
@@ -19,18 +16,14 @@ function initTabs() {
 }
 
 // stackoverflow.com/questions/17908296/jquery-recursive-loading-nested-html
-function loadRecursiveMain(context, callback) {
-  loadRecursive(context);
-  callback();
-}
 function loadRecursive(context) {
   // search matching elements that have 'place-holder' class
   $('.place-holder', context).each(function() {
-    var that = $(this);
-    $.get(that.attr('include-file'), function(data, textStatus) {
-      repl = $(data);
-      that.replaceWith(repl);
-      loadRecursive(repl);
+    var self = $(this);
+    $.get(self.attr('include-file'), function(data, textStatus) {
+      self.html(data); // Load the data into the placeholder
+      loadRecursive(self); // Fix sub placeholders
+      self.replaceWith(self.get(0).childNodes); // Unwrap the content
     }, 'html');
   });
 }
@@ -57,7 +50,7 @@ function addGoogleMapListeners() {
             position : results[0].geometry.location
           });
         } else {
-          alert("Geocode was not successful for the following reason: " + status);
+          /*TODO: close the modal window ? set it to north pole ?*/
         }
       });
     });
