@@ -1,3 +1,7 @@
 .article-lipsum .article-background {
-  background-image: url('../img/vaticano.jpg');
+  background-image: url('../img/lipsum/vaticano.jpg');
+}
+
+.article-singapore .article-background {
+  background-image: url('../img/sg/marina_bay_sands_1.jpg');
 }

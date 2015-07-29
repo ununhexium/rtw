@@ -35,20 +35,6 @@
   font-weight: bold;
 }
 
-h4>span {
-  margin-right: 0.5em;
-}
-
-h4 {
-  display: inline;
-}
-
-h4:nth-child(2) {
-  font-style: italic;
-  display: inline;
-  margin-left: 1em;
-}
-
 i {
   margin-left: 0.5em;
   margin-right: 0.5em;

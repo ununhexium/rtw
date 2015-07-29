@@ -4,7 +4,6 @@ $(document).ready(function() {
   loadRecursive($(this));
   initTabs();
   addGoogleMapListeners();
-  $('[data-toggle="tooltip"]').tooltip();
 });
 
 function initTabs() {

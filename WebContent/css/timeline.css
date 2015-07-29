@@ -151,14 +151,14 @@
 .timeline .article-abstract {
   height: 100px;
   width: 100%;
-  display: inline-block;
+  display: table;
 }
 
 .timeline .article-abstract>p {
   margin-bottom: 0;
-  display: inline-block;
-  vertical-align: middle;
-  line-height: 100px;
+  display: table-cell; 
+  vertical-align: middle; 
+  text-align: left;
 }
 
 .timeline .article-body {
@@ -171,6 +171,20 @@
 
 .article-body>p+p {
   margin-top: 5px;
+}
+
+.timeline h4>span {
+  margin-right: 0.5em;
+}
+
+.timeline h4:nth-child(1) {
+  font-weight: bold;
+  display: inline;
+}
+
+.timeline h4:nth-child(2) {
+  display: inline;
+  margin-left: 1em;
 }
 
 @media ( max-width : 767px) {
