@@ -2,6 +2,50 @@
   background-image: url('../img/lipsum/vaticano.jpg');
 }
 
+.article-2015 .article-background {
+  background-image: url('../img/misc/eiffel-tower-paris-fireworks-celebration-happy-new-year.jpg');
+}
+
+.article-2016 .article-background {
+  background-image: url('../img/misc/eiffel-tower-paris-fireworks-celebration-happy-new-year.jpg');
+}
+
+.article-agra .article-background {
+  background-image: url('../img/in/bg_agra.jpg');
+}
+
+.article-angkor_wat .article-background {
+  background-image: url('../img/kh/bg_angkor_wat.jpg');
+}
+
+.article-athens .article-background {
+  background-image: url('../img/gr/bg_acropolis.jpg');
+}
+
+.article-bagan .article-background {
+  background-image: url('../img/mm/bg_bagan.gif');
+}
+
+.article-creation_of_blog .article-background {
+  background-image: url('../img/de/rooms_windows_view.jpg');
+}
+
+.article-dubai .article-background {
+  background-image: url('../img/ae/bg_dubai.jpg');
+}
+
+.article-giza .article-background {
+  background-image: url('../img/eg/bg_giza.jpg');
+}
+
+.article-japan .article-background {
+  background-image: url('../img/jp/nikko_hashi_1.jpg');
+}
+
+.article-roma .article-background {
+  background-image: url('../img/it/bg_coloseum.jpg');
+}
+
 .article-singapore .article-background {
   background-image: url('../img/sg/marina_bay_sands_1.jpg');
 }

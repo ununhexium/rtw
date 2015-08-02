@@ -33,6 +33,18 @@ function resizeGoogleMap(map) {
   map.setCenter(center);
 }
 
+function drawTripPath() {
+  if ('drewTripPath' in g) {
+    return;
+  }
+  
+  var addrList = $('.article-map > button').map(function() {
+    return $(this).attr('address');
+  }).get();
+  
+  g.drewTripPath = true;
+}
+
 function addGoogleMapListeners() {
   setTimeout(function() {
     $('button.googlemapbutton').click(function() {
@@ -49,7 +61,7 @@ function addGoogleMapListeners() {
             position : results[0].geometry.location
           });
         } else {
-          /*TODO: close the modal window ? set it to north pole ?*/
+          /* TODO: close the modal window ? set it to north pole ? */
         }
       });
     });
