@@ -47,7 +47,6 @@
   -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
   border: 1px solid gray;
-  pointer-events: none;
 }
 
 .timeline>li>.article-background {
