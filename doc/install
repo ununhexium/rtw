@@ -1,0 +1,11 @@
+# ubuntu 15.04
+
+sudo aptitude install ruby
+sudo aptitude install gem
+sudo aptitude install ruby2.1-dev
+sudo aptitude install make
+sudo aptitude install gcc g++
+sudo aptitude install git
+sudo aptitude install nodejs
+
+# note for cygwin: .minttyrc to change the colors
