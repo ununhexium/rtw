@@ -1,3 +1,4 @@
+#!/bin/bash
 # ubuntu 15.04
 
 sudo aptitude install ruby
@@ -7,5 +8,8 @@ sudo aptitude install make
 sudo aptitude install gcc g++
 sudo aptitude install git
 sudo aptitude install nodejs
+sudo aptitude install zsh
+
+sudo chsh --shell $(which zsh) $USER
 
 # note for cygwin: .minttyrc to change the colors
