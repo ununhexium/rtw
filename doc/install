@@ -1,14 +1,7 @@
 #!/bin/bash
 # ubuntu 15.04
 
-sudo aptitude install ruby
-sudo aptitude install gem
-sudo aptitude install ruby2.1-dev
-sudo aptitude install make
-sudo aptitude install gcc g++
-sudo aptitude install git
-sudo aptitude install nodejs
-sudo aptitude install zsh
+sudo aptitude install ruby gem ruby2.1-dev make gcc g++ git nodejs zsh htop
 
 sudo chsh --shell $(which zsh) $USER
 
