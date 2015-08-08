@@ -3,9 +3,9 @@
 
 {% for post in site.posts %}
 
-  {% if post.type %}
-    .article-{{ post.type }} .article-background {
-      background-image: url('../img/background/{{ post.type }}.jpg');
+  {% if post.background %}
+    .article-background-{{ post.background }} {
+      background-image: url('../img/background/{{ post.background }}.jpg');
     }
   {% endif %}
 {% endfor %}

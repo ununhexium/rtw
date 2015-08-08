@@ -13,18 +13,24 @@ title: Timeline
 
       <!-- ids are forbidden here as this content may be included at several locations on the same page -->
       <!-- this line is 1 article element and its class is used to identify it -->
-      <li class="article-{{ post.type }}">
+      <li class="article-{{ post.category }}">
         <div class="badge">
           <i class="glyphicon glyphicon-{{ post.badge }}"></i>
         </div>
+        {% if post.background %}
+        <div class="article-background article-background-{{ post.background }}"></div>
+        {% else %}
         <div class="article-background"></div>
+        {% endif %}
         <div class="article-panel">
           <div class="article-heading">
             <h4 class="article-title">
-              <span class="flag-icon flag-icon-{{ post.countrycode }}"></span>Lipsum City
+              <span class="flag-icon flag-icon-{{ post.countrycode }}"></span>{{ post.title }}
             </h4>
             <!-- second title, to have the original name for instance -->
+            {% if post.subtitle %}
             <h4 class="article-title">{{ post.subtitle }}</h4>
+            {% endif %}
             <p>
               <!-- title complementary info -->
               <small><i class="glyphicon glyphicon-time"></i>{{ post.date | date: "%b %-d, %Y" }}</small>
