@@ -85,7 +85,7 @@ function initializeGoogleMaps() {
       lat : 0,
       lng : 0
     },
-    zoom : 11,
+    zoom : 15,
     mapTypeId : google.maps.MapTypeId.SATELLITE
   };
   g.modalmap = new google.maps.Map(document.getElementById('map_div'), mapOptions);

@@ -7,6 +7,10 @@
   margin:auto;
 }
 
+.timeline h1 {
+  text-align: center;
+}
+
 .timeline:before {
   top: 0;
   bottom: 0;
@@ -186,7 +190,7 @@
 
 .timeline h4:nth-child(2) {
   display: inline;
-  margin-left: 1em;
+  margin-left: 0.5em;
 }
 
 @media ( max-width : 767px) {
