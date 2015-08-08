@@ -1,5 +1,6 @@
 ---
 layout: post
+type: lipsum
 title:  "Welcome to Jekyll!"
 date:   2015-08-06 22:05:12
 categories: jekyll update
