@@ -39,6 +39,7 @@ title: Timeline
             {{ post.content }}
           </div>
           <!-- to show the user where the location is -->
+          {% if post.address %}
           <div class="article-map">
             <!-- pay attention to use something valid for the address -->
             <button
@@ -50,6 +51,7 @@ title: Timeline
               <span class="glyphicon glyphicon-map-marker"></span>
             </button>
           </div>
+          {% endif %}
           <div class="article-more"></div>
         </div> <!-- background image set in css/background.css -->
       </li>

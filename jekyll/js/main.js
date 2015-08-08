@@ -1,9 +1,12 @@
 var g = {};
 
 $(document).ready(function() {
-  loadRecursive($(this));
-  initTabs();
   addGoogleMapListeners();
+  addGoogleMapModalListener();
+  initTimelineHover();
+});
+
+function initTimelineHover(){
   $('.article-panel').mouseenter(function(){
     $(this).css("opacity", "0.5");
     $(this).prev(".article-background").css({
@@ -26,27 +29,6 @@ $(document).ready(function() {
       "-ms-filter": "blur(5px)",
       "filter": "blur(5px)"
     });
-  });
-});
-
-function initTabs() {
-  $("a.tabs").click(function(e) {
-    var target = $(this).data("target");
-    var isTargetExpanded = $(target).hasClass('in');
-    $(target).removeClass('collapse').addClass("in"); // expand clicked target
-  });
-}
-
-// stackoverflow.com/questions/17908296/jquery-recursive-loading-nested-html
-function loadRecursive(context) {
-  // search matching elements that have 'place-holder' class
-  $('.place-holder', context).each(function() {
-    var self = $(this);
-    $.get(self.attr('include-file'), function(data, textStatus) {
-      self.html(data); // Load the data into the placeholder
-      loadRecursive(self); // Fix sub placeholders
-      self.replaceWith(self.get(0).childNodes); // Unwrap the content
-    }, 'html');
   });
 }
 
@@ -91,6 +73,12 @@ function addGoogleMapListeners() {
   }, 1000);
 }
 
+function addGoogleMapModalListener(){
+  $('#map_modal').on('shown.bs.modal', function () {
+    resizeGoogleMap(g.modalmap);
+  });
+}
+
 function initializeGoogleMaps() {
   var mapOptions = {
     center : {
@@ -114,12 +102,8 @@ function initializeGoogleMaps() {
       resizeGoogleMap(g.roadmap);
     }, 500);
   });
-  
-  $('#map_modal').on('show.bs.modal', function() {
-    setTimeout(function() {
-      resizeGoogleMap(g.modalmap);
-    }, 500);
-  });
+  addGoogleMapListener();
 }
 
 google.maps.event.addDomListener(window, 'load', initializeGoogleMaps);
+
