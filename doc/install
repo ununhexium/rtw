@@ -12,4 +12,5 @@ sudo aptitude install zsh
 
 sudo chsh --shell $(which zsh) $USER
 
+
 # note for cygwin: .minttyrc to change the colors
