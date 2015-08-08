@@ -11,7 +11,7 @@ twitter_username: uuh116
 github_username:  ununhexium
 
 # Build settings
-markdown: kramdown
+markdown: html
 
 # Serving
 detach:  false
