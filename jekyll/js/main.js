@@ -1,14 +1,26 @@
+---
+---
+
 var g = {};
 
+
 $(document).ready(function() {
-  addGoogleMapListeners();
+  addGoogleMapListener();
   addGoogleMapModalListener();
   initTimelineHover();
 });
 
 function initTimelineHover(){
   $('.article-panel').mouseenter(function(){
-    $(this).css("opacity", "0.5");
+    $(this).css({
+      "opacity": "0.5",
+      "-webkit-filter": "blur(2px)",
+      "-moz-filter": "blur(2px)",
+      "--filter": "blur(2px)",
+      "-o-filter": "blur(2px)",
+      "-ms-filter": "blur(2px)",
+      "filter": "blur(2px)"
+    });
     $(this).prev(".article-background").css({
       "opacity": "1.0",
       "-webkit-filter": "blur(0px)",
@@ -19,7 +31,15 @@ function initTimelineHover(){
       "filter": "blur(0px)"
     });
   }).mouseleave(function(){
-    $(this).css("opacity", "1.0");
+    $(this).css({
+      "opacity": "1.0",
+      "-webkit-filter": "blur(0px)",
+      "-moz-filter": "blur(0px)",
+      "--filter": "blur(0px)",
+      "-o-filter": "blur(0px)",
+      "-ms-filter": "blur(0px)",
+      "filter": "blur(0px)"
+    });
     $(this).prev(".article-background").css({
       "opacity": "0.5",
       "-webkit-filter": "blur(5px)",
@@ -50,7 +70,7 @@ function drawTripPath() {
   g.drewTripPath = true;
 }
 
-function addGoogleMapListeners() {
+function addGoogleMapListener() {
   setTimeout(function() {
     $('button.googlemapbutton').click(function() {
       var clicked = $(this);
@@ -92,7 +112,31 @@ function initializeGoogleMaps() {
   
   mapOptions.mapTypeId = google.maps.MapTypeId.ROADMAP
   mapOptions.zoom = 1;
-  g.roadmap = new google.maps.Map(document.getElementById('roadmap_div'), mapOptions);
+  g.roadmap = new google.maps.Map(document.getElementById('roadmap_canevas'), mapOptions);
+
+  /*
+   * The road
+   * TODO: geocode instead of manual input:
+   * http://gis.stackexchange.com/questions/22108/how-to-geocode-300-000-addresses-on-the-fly
+   */
+
+  var roadmap_data = new Array();
+  {% for road in site.posts %}
+    {% if road.lat and road.lon %}
+      roadmap_data.push(new google.maps.LatLng({{ road.lat }}, {{ road.lon }}));
+    {% endif %}
+  {% endfor %}
+
+  var path = new google.maps.Polyline({
+    path: roadmap_data,
+    geodesic: true,
+    strokeColor: '#009999',
+    strokeOpacity: 1.0,
+    strokeWeight: 2
+  });
+
+  path.setMap(g.roadmap);
+
   
   /*
    * Refresh the roadmap on the first click on it.
