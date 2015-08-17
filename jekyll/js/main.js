@@ -127,12 +127,25 @@ function initializeGoogleMaps() {
     {% endif %}
   {% endfor %}
 
+  // Define a symbol using SVG path notation, with an opacity of 1.
+  var lineSymbol = {
+    path: 'M 0,-1 0,1',
+    strokeOpacity: 1,
+    scale: 4
+  };
+
+
   var path = new google.maps.Polyline({
     path: roadmap_data,
     geodesic: true,
     strokeColor: '#009999',
-    strokeOpacity: 1.0,
-    strokeWeight: 2
+    strokeOpacity: 0.0,
+    strokeWeight: 2,
+    icons: [{
+      icon: lineSymbol,
+      offset: '0',
+      repeat: '20px'
+    }]
   });
 
   path.setMap(g.roadmap);
