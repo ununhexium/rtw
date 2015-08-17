@@ -33,7 +33,13 @@ title: Timeline
             {% endif %}
             <p>
               <!-- title complementary info -->
+              {% capture nowunix %}{{'now' | date: '%s'}}{% endcapture %}
+              {% capture posttime %}{{post.date | date: '%s'}}{% endcapture %}
+              {% if posttime < nowunix %}
               <small><i class="glyphicon glyphicon-time"></i>{{ post.date | date: "%b %-d, %Y" }}</small>
+              {% else %}
+              <small><i class="glyphicon glyphicon-time"></i>{{ post.date | date: "%B %Y" }}</small>
+              {% endif %}
             </p>
           </div>
           <!-- summary of the article -->

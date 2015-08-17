@@ -122,8 +122,8 @@ function initializeGoogleMaps() {
 
   var roadmap_data = new Array();
   {% for road in site.posts %}
-    {% if road.lat and road.lon %}
-      roadmap_data.push(new google.maps.LatLng({{ road.lat }}, {{ road.lon }}));
+    {% if road.lat and road.lng %}
+      roadmap_data.push(new google.maps.LatLng({{ road.lat }}, {{ road.lng }}));
     {% endif %}
   {% endfor %}
 
