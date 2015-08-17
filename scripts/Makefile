@@ -13,7 +13,7 @@ get-img:
 put-img:
 	rsync $(RSYNC_OPT) $(IMG_LOCAL) $(IMG_REMOTE)
 
-img: get-img put-img
+img: get-img
 
 info:
 	@echo Makefile directory "$(DIR)"
