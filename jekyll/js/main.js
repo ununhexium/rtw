@@ -11,16 +11,50 @@ $(document).ready(function() {
 });
 
 function initTimelineHover(){
+  
+  /* The style we will apply to the article's elements */
+
+  hoverTxtStyle={
+    "opacity": "0.5",
+    "-webkit-filter": "blur(5px)",
+    "-moz-filter": "blur(5px)",
+    "--filter": "blur(5px)",
+    "-o-filter": "blur(5px)",
+    "-ms-filter": "blur(5px)",
+    "filter": "blur(5px)",
+    "transition": "filter 1s",
+    "-webkit-transition": "-webkit-filter 1s",
+    "-moz-transition": "-moz-filter 1s",
+    "--transition": "--filter 1s",
+    "-o-transition": "-o-filter 1s",
+    "-ms-transition": "-ms-filter 1s"
+  }
+
+  txtStyle={
+    "opacity": "1.0",
+    "-webkit-filter": "blur(0px)",
+    "-moz-filter": "blur(0px)",
+    "--filter": "blur(0px)",
+    "-o-filter": "blur(0px)",
+    "-ms-filter": "blur(0px)",
+    "filter": "blur(0px)"
+  }
+
+  avoidButtons={
+    "opacity": "0.25",
+    "transition": "all 1s"
+  }
+
+  replaceButtons={
+    "opacity": "1.0",
+  }
+
   $('.article-panel').mouseenter(function(){
-    $(this).css({
-      "opacity": "0.5",
-      "-webkit-filter": "blur(2px)",
-      "-moz-filter": "blur(2px)",
-      "--filter": "blur(2px)",
-      "-o-filter": "blur(2px)",
-      "-ms-filter": "blur(2px)",
-      "filter": "blur(2px)"
-    });
+    $(this).children(".article-abstract").css(hoverTxtStyle);
+    $(this).children(".article-heading").css(hoverTxtStyle);
+    $(this).children(".article-buttons").css(avoidButtons);
+
+    
     $(this).prev(".article-background").css({
       "opacity": "1.0",
       "-webkit-filter": "blur(0px)",
@@ -31,15 +65,10 @@ function initTimelineHover(){
       "filter": "blur(0px)"
     });
   }).mouseleave(function(){
-    $(this).css({
-      "opacity": "1.0",
-      "-webkit-filter": "blur(0px)",
-      "-moz-filter": "blur(0px)",
-      "--filter": "blur(0px)",
-      "-o-filter": "blur(0px)",
-      "-ms-filter": "blur(0px)",
-      "filter": "blur(0px)"
-    });
+    $(this).children(".article-abstract").css(txtStyle);
+    $(this).children(".article-heading").css(txtStyle);
+    $(this).children(".article-buttons").css(replaceButtons);
+
     $(this).prev(".article-background").css({
       "opacity": "0.5",
       "-webkit-filter": "blur(5px)",

@@ -1,6 +1,11 @@
 
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
+export TMPDIR=/tmp/rtwtmp
+if [ -z "$TMPDIR" ]; then
+  mkdir -p "$TMPDIR"
+fi
+
 alias make="make -f $DIR/scripts/Makefile"
 alias j=jekyll
-
+alias vimake="vi $DIR/scripts/Makefile"

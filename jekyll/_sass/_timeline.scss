@@ -98,10 +98,28 @@ i {
   margin: 0;
 }
 
-.timeline>li .article-map {
+.timeline>li .article-buttons {
   position: absolute;
   bottom: 5px;
   right: 5px;
+  float: right;
+}
+
+.timeline>li .article-buttons:hover {
+  opacity:1.0;
+}
+
+.timeline>li .article-map {
+  display:inline-block;
+}
+
+.timeline>li .article-map:hover {
+  opacity:1.0;
+  display:inline-block;
+}
+
+.timeline>li .article-more {
+  display:inline-block;
 }
 
 .timeline>li:nth-child(even)>.article-panel, .timeline>li:nth-child(even)>.article-background {
@@ -123,7 +141,7 @@ i {
   right: auto;
 }
 
-.timeline>li:nth-child(even) .article-map {
+.timeline>li:nth-child(even) .article-buttons {
   position: absolute;
   bottom: 5px;
   left: 5px;

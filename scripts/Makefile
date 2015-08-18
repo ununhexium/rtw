@@ -26,3 +26,4 @@ build:
 upload: build
 	@echo Upload to $(SERVER_USER)@$(SERVER)
 	rsync --delete -vr $(DIR)/../jekyll/_site/ $(SERVER_USER)@$(SERVER):/home/$(SERVER_USER)/www/
+
