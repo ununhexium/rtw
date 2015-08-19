@@ -150,10 +150,24 @@ function initializeGoogleMaps() {
    */
 
   var roadmap_data = new Array();
-  {% for road in site.posts %}
-    {% if road.lat and road.lng %}
-      roadmap_data.push(new google.maps.LatLng({{ road.lat }}, {{ road.lng }}));
+  var future_roadmap_data = new Array();
+
+  {% capture nowunix %}{{'now' | date: '%Y-%M-%d-%H'}}{% endcapture %}
+  {% for post in site.posts reversed %}
+    {% capture posttime %}{{ post.date | date: '%Y-%M-%d-%H'}}{% endcapture %}
+    {% if post.lat and post.lng and posttime < nowunix %}
+      roadmap_data.push(new google.maps.LatLng({{ post.lat }}, {{ post.lng }}));
+      {% capture lastentry %}push(new google.maps.LatLng({{ post.lat }}, {{ post.lng }}));{% endcapture %}
+    {% else %}
+    {% if post.lat and post.lng %}
+      {% if lastentry contains 'push' %}
+        future_roadmap_data.{{lastentry}}
+        {% capture lastentry %}'empty'{% endcapture %}
+      {% endif %}
+      future_roadmap_data.push(new google.maps.LatLng({{ post.lat }}, {{ post.lng }}));
     {% endif %}
+    {% endif %}
+    /* {{ posttime }} < {{ nowunix }} */
   {% endfor %}
 
   // Define a symbol using SVG path notation, with an opacity of 1.
@@ -167,6 +181,14 @@ function initializeGoogleMaps() {
   var path = new google.maps.Polyline({
     path: roadmap_data,
     geodesic: true,
+    strokeColor: '#00409a',
+    strokeOpacity: 1.0,
+    strokeWeight: 4
+  });
+
+  var future_path = new google.maps.Polyline({
+    path: future_roadmap_data,
+    geodesic: true,
     strokeColor: '#009999',
     strokeOpacity: 0.0,
     strokeWeight: 2,
@@ -178,6 +200,7 @@ function initializeGoogleMaps() {
   });
 
   path.setMap(g.roadmap);
+  future_path.setMap(g.roadmap);
 
   
   /*
