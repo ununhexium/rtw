@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: article
 title: Articles
 ---
 
@@ -12,7 +12,7 @@ title: Articles
     {% for post in site.posts %}
 
       <div class="col-xs-12 col-sm-3 col-md-2 col-lg-2 bit">
-        <p>{{ post.abstract }}</p>
+        {{ post.content }}
       </div>
 
       {% capture mod2 %}{{ loop.index | modulo: 2 }}{% endcapture %}
